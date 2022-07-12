@@ -12,7 +12,6 @@ def main(args):
     - selecting the necessary models and views for the current task
     - passing data between models and views
     """
-
     infiles = args.infiles
     # Need a list of files to iterate over
     if not isinstance(infiles, list):
@@ -38,5 +37,5 @@ if __name__ == "__main__":
         help="Input CSV(s) containing inflammation series for each patient")
 
     args = parser.parse_args()
-    
+
     main(args)
