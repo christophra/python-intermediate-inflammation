@@ -112,3 +112,24 @@ class Patient(Person):
             return self.observations[-1]
         except IndexError:
             return None
+
+
+class Doctor(Person):
+    """A doctor doing doctor things."""
+    def __init__(self, name):
+        super().__init__(name)
+        self.patients = []
+
+    def __getitem__(self, name):
+        for _p in self.patients:
+            if _p.name == name:
+                return _p
+        else:
+            raise ValueError(f"Patient {name} not found in doctor {self}")
+
+    def add_patient(self, patient):
+        # Check if patient is already added, avoid duplicates
+        for _p in self.patients:
+            if _p.name == patient.name:
+                return
+        self.patients.append(patient)
