@@ -96,6 +96,9 @@ def test_person():
     alice = Person('Alice')
     assert str(alice) == 'Alice'
 
+    with pytest.raises(AttributeError):
+        alice.add_observation(3)
+
 def test_patient():
     """Test Patient class constructor."""
     from inflammation.models import Patient
