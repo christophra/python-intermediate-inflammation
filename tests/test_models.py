@@ -81,3 +81,25 @@ def test_patient_normalise(test, expected):
        Assumption that test accuracy of two decimal places is sufficient."""
     from inflammation.models import patient_normalise
     npt.assert_almost_equal(patient_normalise((np.array(test))), np.array(expected), decimal=2)
+
+def test_observation():
+    """Test Observation class constructor."""
+    from inflammation.models import Observation
+    obs = Observation(1, 42)
+    assert obs.day == 1
+    assert obs.value == 42
+
+
+def test_patient():
+    """Test Patient class constructor."""
+    from inflammation.models import Patient
+
+    alice = Patient('Alice')
+    assert str(alice) == 'Alice'
+
+    assert alice.last_observation is None
+    alice.add_observation(42)
+    assert alice.last_observation.value == 42
+    alice.add_observation(32)
+    assert alice.last_observation.value == 32
+
