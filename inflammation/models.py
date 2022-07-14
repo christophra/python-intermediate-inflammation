@@ -79,10 +79,18 @@ class Observation:
         return str(self.value)
 
 
-class Patient:
-    """A patient in an inflammation study."""
+class Person:
     def __init__(self, name):
         self.name = name
+
+    def __str__(self):
+        return self.name
+
+
+class Patient(Person):
+    """A patient in an inflammation study."""
+    def __init__(self, name):
+        super().__init__(name)
         self.observations = []
 
     def add_observation(self, value, day=None):
@@ -104,6 +112,3 @@ class Patient:
             return self.observations[-1]
         except IndexError:
             return None
-
-    def __str__(self):
-        return self.name

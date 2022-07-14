@@ -90,6 +90,12 @@ def test_observation():
     assert obs.value == 42
 
 
+def test_person():
+    """Test Person class constructor."""
+    from inflammation.models import Person
+    alice = Person('Alice')
+    assert str(alice) == 'Alice'
+
 def test_patient():
     """Test Patient class constructor."""
     from inflammation.models import Patient
