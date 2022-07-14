@@ -126,7 +126,7 @@ def test_create_doctor():
 def test_doctor_is_person():
     """Test if a doctor is a person"""
     from inflammation.models import Doctor, Person
-    doc = Doctor('Elliot Reid')
+    doc = Doctor("Elliot Reid")
     assert isinstance(doc, Person)
 
 
@@ -138,7 +138,7 @@ def test_patients_added_correctly():
     doc.add_patient(alice)
     assert doc.patients is not None
     assert len(doc.patients) == 1
-    assert doc['Alice'] is not None
+    assert doc["Alice"] is not None
 
 
 def test_no_duplicate_patients():
