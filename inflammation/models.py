@@ -78,6 +78,9 @@ class Observation:
     def __str__(self):
         return str(self.value)
 
+    def __eq__(self, other):
+        return (self.day == other.day and self.value == other.value)
+
 
 class Person:
     def __init__(self, name):
@@ -109,6 +112,15 @@ class Patient(Person):
 
         self.observations.append(new_observation)
         return new_observation
+
+    def __eq__(self, other):
+        if self.name != other.name:
+            return False
+        for o_self, o_other in zip(self.observations, other.observations):
+            if o_self != o_other:
+                return False
+        return True
+
 
     @property
     def last_observation(self):
