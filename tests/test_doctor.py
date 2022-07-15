@@ -11,7 +11,6 @@ def test_create_doctor():
     name = 'JD'
     doc = Doctor(name)
     assert doc.name == name
-    assert isinstance()
 
 
 def test_doctor_is_person():
