@@ -31,7 +31,7 @@ The following optional packages are required to run Inflam's unit tests:
 ## Credits
 
 - All glory to the hypnotoad
-- [The Intermediate Python course](https://carpentries-incubator.github.io/python-intermediate-development)
+- Many thanks to the[Intermediate Python course](https://carpentries-incubator.github.io/python-intermediate-development)
 
 ## Citation
 
@@ -47,8 +47,9 @@ GNU GPL v3
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-pip install .``` 
+pip install .
+```
 
 ## Contact
 
-M
+The owner of this repo.
